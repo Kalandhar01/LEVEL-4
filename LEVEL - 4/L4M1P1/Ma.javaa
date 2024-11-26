@@ -1,0 +1,47 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        String[] arr = s.split(" ");
+        
+        StringBuilder sb = new StringBuilder();
+        int count = 1;
+        for(String c : arr){
+            
+            if(isVowel(c.charAt(0))){
+                sb.append(c).append("ma");
+                for(int i=1;i<=count;i++){
+                    sb.append("a");
+                }
+            }
+            
+            else{
+                char first = c.charAt(0);
+                String last = c.substring(1);
+                sb.append(last).append(first).append("ma");
+                
+                for(int i=1;i<=count;i++){
+                    sb.append("a");
+                }
+                
+            }
+            
+            sb.append(" ");
+            count++;
+        }
+        System.out.println(sb);
+        
+        
+    }
+    
+    public static boolean isVowel(char c){
+        if( c=='a' || c=='A' || c=='e' || c=='E' || c=='I' || c=='i' || c=='o' 
+        || c=='O' ||
+            c=='U' || c=='u'){
+                return true;
+            }
+            return false;
+    }
+    
+};
