@@ -28,6 +28,7 @@ public class Last2Fib
             b=c;
             c=a+b;
         }
+
         String s = Integer.toString(c);
        
         if(s.length()==1)

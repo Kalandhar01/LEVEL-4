@@ -12,8 +12,8 @@ public class GrandSon{
         for(int i=0;i<n;i++){
             String s = sc.nextLine();
             String[] arr = s.split(" ");
-            a.add(arr[1]);
-            a.add(arr[0]);
+            a.add(arr[1]);//father
+            a.add(arr[0]);//son5
         }
         
         String f=sc.nextLine();
