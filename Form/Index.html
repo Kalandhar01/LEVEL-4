@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div class="font-[sans-serif] bg-gray-50 flex items-center md:h-screen p-4">
+    <div class="w-full max-w-[30%] max-md:max-w-[50%] mx-auto">
+      <div class="bg-white flex justify-center items-center gap-16 w-full sm:p-8 p-6 shadow-md rounded-md overflow-hidden">
+        <form class="w-full" id="registration-form">
+          <div class="mb-8">
+            <h3 class="text-gray-800 text-2xl font-bold">Register</h3>
+          </div>
+          <div class="space-y-6">
+            <div class="w-full max-w-sm min-w-[200px]">
+              <div class="relative">
+                <input type="text" name="name" required
+                  class="peer w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" />
+                <label class="absolute cursor-text bg-white px-1 left-2.5 top-2.5 text-slate-400 text-sm transition-all transform origin-left peer-focus:-top-2 peer-focus:left-2.5 peer-focus:text-xs peer-focus:text-slate-400 peer-focus:scale-90">Name</label>
+              </div>
+            </div>
+            <div class="w-full max-w-sm min-w-[200px]">
+              <div class="relative">
+                <input type="email" name="email" required
+                  class="peer w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" />
+                <label class="absolute cursor-text bg-white px-1 left-2.5 top-2.5 text-slate-400 text-sm transition-all transform origin-left peer-focus:-top-2 peer-focus:left-2.5 peer-focus:text-xs peer-focus:text-slate-400 peer-focus:scale-90">Email</label>
+              </div>
+            </div>
+            <div class="w-full max-w-sm min-w-[200px]">
+              <div class="relative">
+                <input type="password" name="pass" required
+                  class="peer w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" />
+                <label class="absolute cursor-text bg-white px-1 left-2.5 top-2.5 text-slate-400 text-sm transition-all transform origin-left peer-focus:-top-2 peer-focus:left-2.5 peer-focus:text-xs peer-focus:text-slate-400 peer-focus:scale-90">Password</label>
+              </div>
+            </div>
+            <div class="w-full max-w-sm min-w-[200px]">
+              <div class="relative">
+                <input type="tel" name="phone" required
+                  class="peer w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" />
+                <label class="absolute cursor-text bg-white px-1 left-2.5 top-2.5 text-slate-400 text-sm transition-all transform origin-left peer-focus:-top-2 peer-focus:left-2.5 peer-focus:text-xs peer-focus:text-slate-400 peer-focus:scale-90">Phone</label>
+              </div>
+            </div>
+            
+            
+            <div class="flex items-center space-x-4">
+              <label class="flex items-center">
+                <input type="radio" name="gender" value="male" class="mr-2" id="gender-male" />
+                Male
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="gender" value="female" class="mr-2" id="gender-female" />
+                Female
+              </label>
+            </div>
+
+          
+            <div id="sport-div" class="hidden w-full max-w-sm min-w-[200px]">
+              <div class="relative">
+                <input type="text" name="sport" id="sport" 
+                  class="peer w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" />
+                <label class="absolute cursor-text bg-white px-1 left-2.5 top-2.5 text-slate-400 text-sm transition-all transform origin-left peer-focus:-top-2 peer-focus:left-2.5 peer-focus:text-xs peer-focus:text-slate-400 peer-focus:scale-90">Favorite Sport</label>
+              </div>
+            </div>
+
+            <div id="food-div" class="hidden w-full max-w-sm min-w-[200px]">
+              <div class="relative">
+                <input type="text" name="food" id="food" 
+                  class="peer w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" />
+                <label class="absolute cursor-text bg-white px-1 left-2.5 top-2.5 text-slate-400 text-sm transition-all transform origin-left peer-focus:-top-2 peer-focus:left-2.5 peer-focus:text-xs peer-focus:text-slate-400 peer-focus:scale-90">Favorite Food</label>
+              </div>
+            </div>
+          </div>
+          <div class="!mt-8">
+            <button type="submit"
+              class="w-full py-2.5 px-4 text-sm tracking-wider font-semibold rounded-md bg-blue-600 hover:bg-blue-700 text-white focus:outline-none">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const submit = (event) => {
+      event.preventDefault();
+
+      const name = document.getElementsByName('name')[0].value;
+      const email = document.getElementsByName('email')[0].value;
+      const pass = document.getElementsByName('pass')[0].value;
+      const phone = document.getElementsByName('phone')[0].value;
+      const gender = document.querySelector('input[name="gender"]:checked');
+
+      if (!name || !email || !pass || !phone || !gender) {
+          alert("All fields are required.");
+          return;
+      }
+
+      if (!/\S+@\S+\.\S+/.test(email)) {
+         alert("Please enter a valid email address.");
+          return;
+      }
+
+      if (pass.length < 6) {
+         alert("Password must be at least 6 characters long.");
+          return;
+      }
+
+      if (!/^\d{10}$/.test(phone)) {
+         alert("Phone number must be 10 digits long.");
+          return;
+      }
+
+      alert("Form submitted successfully!");
+      console.log({ name, email, pass, phone, gender: gender.value });
+    };
+
+    document.getElementById('registration-form').addEventListener('submit', submit);
+
+    const maleRadio = document.getElementById('gender-male');
+    const femaleRadio = document.getElementById('gender-female');
+    const sportDiv = document.getElementById('sport-div');
+    const foodDiv = document.getElementById('food-div');
+
+    maleRadio.addEventListener('change', () => {
+      if (maleRadio.checked) {
+        foodDiv.classList.remove('hidden');
+        sportDiv.classList.add('hidden');
+      }
+    });
+
+    femaleRadio.addEventListener('change', () => {
+      if (femaleRadio.checked) {
+        sportDiv.classList.remove('hidden');
+        foodDiv.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+
+</html>
